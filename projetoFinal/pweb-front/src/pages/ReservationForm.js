@@ -74,21 +74,33 @@ function ReservationForm() {
           <Form.Label>Return date</Form.Label>
           <Form.Control type="date" name="return_date" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange} />
         </Form.Group>
-        
-        <Form.Label>Is approved</Form.Label>
-        <Form.Select className="mb-3" controlId="is_approved">
-          <option>Open this select menu</option>
-          <option type="text" name="is_approved" value="y" size="lg" onChange={handleInputChange}>Yes</option>
-          <option type="text" name="is_approved" value="n" size="lg" onChange={handleInputChange}>No</option>
-        </Form.Select>
+
+        <Form.Group className="mb-3" controlId="is_approved">
+          <Form.Label>Is approved</Form.Label>
+          <Form.Control as="select" name="is_approved" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
+            <option>Open this select menu</option>
+            <option value={true}>Yes</option>
+            <option value={false}>No</option>
+          </Form.Control>
+        </Form.Group>
+
         <Form.Group className="mb-3" controlId="total_price">
           <Form.Label>Total price</Form.Label>
+
+          <Form.Label>Is returned</Form.Label>
           <Form.Control type="text" name="total_price" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange} />
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="is_returned">
           <Form.Label>Is returned</Form.Label>
-          <Form.Control type="text" name="is_returned" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange} />
+          <Form.Control as="select" name="is_returned" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
+            <option>Open this select menu</option>
+            <option value={true}>Yes</option>
+            <option value={false}>No</option>
+          </Form.Control>
         </Form.Group>
+
+
         <button type="submit" class="submit button" onChange={handleInputChange}>Send</button>
         <button type="submit" class="submit button" onChange={handleInputChange}>Clear</button>
       </Form>

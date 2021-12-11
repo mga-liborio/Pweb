@@ -44,22 +44,8 @@ function ChecklistForm() {
       <h1>Checklist Form</h1>
       <p>Check the fields below.</p>
       <Form id="checklist-in-form" onSubmit={handleFormSubmit}>
-
         <Row>
           <Col>
-            {['checkbox', 'radio'].map((type) => (
-              <div key={`inline-${type}`} className="mb-3">
-                <Form.Check inline label="Yes" name="group1" type={true} id={`inline-${type}-1`} />
-                <Form.Check
-                  inline
-                  label="No"
-                  name="group1"
-                  type={false}
-                  id={`inline-${type}-2`}
-                />
-              </div>
-            ))}
-
             <Form.Group className="mb-3" controlId="paint_scratch">
               <Form.Label>Paint scratch</Form.Label>
               <Form.Control as="select" name="paint_scratch" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
