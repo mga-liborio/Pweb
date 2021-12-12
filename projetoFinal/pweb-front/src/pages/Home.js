@@ -1,4 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
+
+
 
 class Home extends React.Component {
 
@@ -35,7 +38,7 @@ class Home extends React.Component {
                                     <a href="#" class="nav-link active">FALE CONOSCO</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">LOGIN</a>
+                                    <Link to="/login" class="nav-link active">LOGIN</Link>
                                 </li>
                             </ul>
                         </div>

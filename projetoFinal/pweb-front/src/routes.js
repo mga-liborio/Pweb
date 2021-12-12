@@ -23,6 +23,7 @@ export default function Routers(){
                 <Route exact path="/provider-register" element={<ProviderRegistrationForm/>} />                
                 <Route exact path="/reservation" element={<ReservationForm/>} />
             </Routes>
+            
         </BrowserRouter>
     )
 
