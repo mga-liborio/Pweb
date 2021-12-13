@@ -2,17 +2,17 @@ from .views import BookingOptionsModelViewSet, ChecklistModelViewSet, InsuranceM
 from rest_framework import routers
 from django.urls import path, include
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 
 
-router.register(r'services', ServiceModelViewSet, basename="services")
-router.register(r'booking-options', BookingOptionsModelViewSet,
+router.register('services', ServiceModelViewSet, basename="services")
+router.register('booking-options', BookingOptionsModelViewSet,
                 basename="booking-option")
-router.register(r'insurances', InsuranceModelViewSet,
+router.register('insurances', InsuranceModelViewSet,
                 basename="insurance")
-router.register(r'checklists', ChecklistModelViewSet,
+router.register('checklists', ChecklistModelViewSet,
                 basename="checklist")
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path(r'', include(router.urls)),
 ]

@@ -1,15 +1,15 @@
-
-from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from .views import UserModelViewSet
+from .views import EmployeeModelViewSet, CustomerModelViewSet
+from rest_framework.permissions import DjangoModelPermissionsOrAnonReadOnly
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 
-router.register(r'register', UserModelViewSet,
-                basename="register")
+router.register('customers', CustomerModelViewSet,
+                basename="customer")
+router.register('employees', EmployeeModelViewSet, basename="employee")
 
 urlpatterns = [
-    path('auth/', include('rest_auth.urls')),
-    path('', include(router.urls)),
+    path('auth/', include('rest_framework.urls')),
+    path(r'', include(router.urls))
 ]

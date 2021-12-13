@@ -1,18 +1,18 @@
 from rest_framework import serializers
-from core.models import Category, Reservation, Vehicle
+from core.models import Category, Rent, Vehicle
 
 
 class ReadCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ("id", "name", "passengers")
+        fields = ("id", "name", "passengers", "price")
     # read_only_fields = fields
 
 
 class WriteCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ("name", "passengers")
+        fields = ("name", "passengers", "price")
 
 
 class ReadVehicleSerializer(serializers.ModelSerializer):
@@ -20,8 +20,8 @@ class ReadVehicleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Vehicle
-        fields = ("id", "license_plate", "color", "brand", "car_model", "category", "chassi_number", "renavam",
-                  "have_gps", "is_for_pcd", "kilometers", "fuel_liters", "status")
+        fields = ("id", "license_plate", "color", "brand", "car_model", "year", "category", "chassi_number", "renavam", "price",
+                  "have_gps", "is_for_pcd", "kilometers", "full_tank", "fuel_liters", "status")
         read_only_fields = fields
 
 
@@ -31,26 +31,26 @@ class WriteVehicleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Vehicle
-        fields = ("license_plate", "color", "brand", "car_model", "category", "chassi_number", "renavam",
-                  "have_gps", "is_for_pcd", "kilometers", "fuel_liters", "status")
+        fields = ("license_plate", "color", "brand", "car_model", "year", "category", "chassi_number", "renavam", "price",
+                  "have_gps", "is_for_pcd", "kilometers", "full_tank", "fuel_liters", "status")
 
 
-class WriteReservationSerializer(serializers.ModelSerializer):
+class WriteRentSerializer(serializers.ModelSerializer):
     vehicle = serializers.SlugRelatedField(
         slug_field="license_plate", queryset=Vehicle.objects.all())
 
     class Meta:
-        model = Reservation
+        model = Rent
         fields = ("vehicle", "rent_date", "return_date",
                   "is_approved", "total_price", "is_returned")
 
 
-class ReadReservationSerializer(serializers.ModelSerializer):
+class ReadRentSerializer(serializers.ModelSerializer):
     vehicle = serializers.SlugRelatedField(
         slug_field="license_plate", queryset=Vehicle.objects.all())
 
     class Meta:
-        model = Reservation
+        model = Rent
         fields = ("id", "vehicle", "rent_date", "return_date",
                   "is_approved", "total_price", "is_returned")
         read_only_fields = fields

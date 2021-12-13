@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib import auth
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth import get_user_model
@@ -11,11 +12,10 @@ class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     fieldsets = (
         (None, {'fields': ('email', 'username', )}),
-        (_('Personal info'), {'fields': ('name', 'cpf', 'rg', 'cnh')}),
+        (_('Personal info'), {'fields': ('name', )}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'user_permissions')}),
-        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
-        (_('user_info'), {'fields': ('profession', 'cnh_first_date')}),
+        (_('Important dates'), {'fields': ('last_login', 'date_joined')})
     )
     add_fieldsets = (
         (None, {
@@ -24,7 +24,7 @@ class UserAdmin(BaseUserAdmin):
         }),
     )
     list_display = ['email', 'name', 'is_staff']
-    search_fields = ('email', 'name', 'cpf', 'cnh')
+    search_fields = ('email', 'name',)
     ordering = ('email', 'name')
 
 
