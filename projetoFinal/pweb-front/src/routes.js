@@ -6,6 +6,7 @@ import VehicleForm from "./pages/VehicleForm"
 import Login from "./pages/Login"
 import ChecklistForm from "./pages/ChecklistForm"
 import ReservationForm from "./pages/ReservationForm"
+import ClientForm from "./pages/ClientForm"
 
 export default function Routers(){
     return(
@@ -16,6 +17,7 @@ export default function Routers(){
                 <Route exact path="/Vehicle-create" element={<VehicleForm/>} />
                 <Route exact path="/login" element={<Login/>} />
                 <Route exact path="/check-list" element={<ChecklistForm/>} />
+                <Route exact path="/client-create" element={<ClientForm/>} />
             </Routes>
         </BrowserRouter>
     )
