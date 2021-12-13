@@ -1,0 +1,8 @@
+{
+  "CarType":[
+    {"Id":"1","Cname":"Hatch"},
+    {"Id":"2","Cname":"Sedan"},
+    {"Id":"3","Cname":"SUV"}
+
+  ]
+}

@@ -8,6 +8,8 @@ import ChecklistForm from "./pages/ChecklistForm"
 import EmployeeRegistrationForm from "./pages/EmployeeRegistrationForm"
 import ReservationForm from "./pages/ReservationForm"
 import ProviderRegistrationForm from "./pages/ProviderRegistrationForm"
+import CarList from "./pages/CarList"
+
 
 
 export default function Routers(){
@@ -22,6 +24,8 @@ export default function Routers(){
                 <Route exact path="/employeeregister" element={<EmployeeRegistrationForm/>} />                
                 <Route exact path="/provider-register" element={<ProviderRegistrationForm/>} />                
                 <Route exact path="/reservation" element={<ReservationForm/>} />
+                <Route exact path="/carlist" element={<CarList/>} />                
+                
             </Routes>
             
         </BrowserRouter>
