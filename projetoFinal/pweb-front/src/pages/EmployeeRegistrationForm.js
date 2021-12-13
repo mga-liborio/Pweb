@@ -84,6 +84,12 @@ function EmployeeRegistrationForm() {
           </Form.Control>
         </Form.Group>
 
+        <Form.Group className="mb-3" controlId="password_field">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" name="password" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
+          </Form.Control>
+        </Form.Group>
+
         <button type="submit" class="submit button" onChange={handleInputChange}>Send</button>
         <button type="inputClear" class="submit button" onChange={handleInputChange}>Clear</button>
       </Form >
