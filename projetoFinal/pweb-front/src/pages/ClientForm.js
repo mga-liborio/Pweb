@@ -4,25 +4,24 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Api from '../ApiAxions'
 
-function VehicleForm(){
+function ClientForm(){
 
     const [campos, setCampos] = useState({
-        license_plate: '',
-        car_model: '',
-        color: '',
-        brand: '',
-        year: '',
-        chassi_number: '',
-        renavam: '',
-        tank: '',
-        fuel_liters: '',
-        kilometers: '',
-        category: 'barco',
-        is_for_pcd : false,
-        have_gps: false,
-        status: 'eita',
-        price: '',
-        photo: ''
+        name: '',
+        email: '',
+        cpf: '',
+        rg: '',
+        cnh: '',
+        category_cnh: '',
+        cnh_first_date: '',
+        street: '',
+        number: '',
+        city: '',
+        zip_code: '',
+        state : '',
+        country: '',
+        profession: '',
+        is_approved: ''
     });
 
     
@@ -39,10 +38,17 @@ function VehicleForm(){
 	
     function handleFormSubmit(event){
 
+        const config = {
+            Authorization: {
+              usaname: 'mga',
+              password: '1234',
+            },
+          };
 
         event.preventDefault();
         console.log(campos);
-        Api.post("/vehicles/",campos).then((res) => {
+        console.log(config);
+        Api.post("/vehicles/",campos, config).then((res) => {
                                                         console.log(res.data)
                                                         }).catch((error) => {
                                                             console.log(error)
@@ -55,12 +61,12 @@ function VehicleForm(){
                     <div className="col-md-8 m-auto">
                         <p className="lead text-center pt-5">Cadastro Veículos</p>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Nome Veículo:</label>
-                            <Form.Control type="license_plate" name ="license_plate" size="lg" placeholder="Placa" autoComplete="license-car" className="position-relative" onChange={handleInputChange}/>
+                            <label className="form-control-label" class="text-left pt-3">Nome completo:</label>
+                            <Form.Control type="text" name ="name" size="lg" placeholder="Nome" autoComplete="name" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Modelo:</label>
-                            <Form.Control type="text" name ="car_model" size="lg" placeholder="Modelo do carro" autoComplete="car_model" className="position-relative" onChange={handleInputChange}/>
+                            <label className="form-control-label" class="text-left pt-3">Email:</label>
+                            <Form.Control type="email" name ="email" size="lg" placeholder="email" autoComplete="email" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">Nome Veículo:</label>
@@ -76,7 +82,7 @@ function VehicleForm(){
                         </Form.Group>
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">Chassis:</label>
-                            <Form.Control type="chassis" name ="chassi_number" size="lg" placeholder="chassi_number" autoComplete="chassi_number-car" className="position-relative" onChange={handleInputChange}/>
+                            <Form.Control type="chassis" name ="chassis" size="lg" placeholder="chassis" autoComplete="chassis-car" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">Renavam:</label>
@@ -88,11 +94,11 @@ function VehicleForm(){
                         </Form.Group>
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">nivel combustivel em litros:</label>
-                            <Form.Control type="number" name ="fuel_liters" size="lg" placeholder="Nivel total tanque" autoComplete="fuel_liters" className="position-relative" onChange={handleInputChange}/>
+                            <Form.Control type="number" name ="level_fuel" size="lg" placeholder="Nivel total tanque" autoComplete="level-fuel" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">Km rodados:</label>
-                            <Form.Control type="number" name ="kilometers" size="lg" placeholder="kilometers" autoComplete="kilometers-car" className="position-relative" onChange={handleInputChange}/>
+                            <Form.Control type="number" name ="km" size="lg" placeholder="km" autoComplete="km-car" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">Categoria:</label>
@@ -128,7 +134,7 @@ function VehicleForm(){
                         </Form.Group>
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">Valor Basico por diaria:</label>
-                            <Form.Control type="number" name="price" size="lg" placeholder="price" autoComplete="price-car" className="position-relative" onChange={handleInputChange}/>
+                            <Form.Control type="number" name="price" size="lg" placeholder="km" autoComplete="price-car" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
                             <div class="form-group pt-3">
@@ -146,4 +152,4 @@ function VehicleForm(){
     ) 
 }
 
-export default VehicleForm;
+export default ClientForm;
