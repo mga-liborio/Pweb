@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
 import Api from '../ApiAxions'
+import Car from './Car'
 
 function VehicleForm(){
 
@@ -17,7 +17,7 @@ function VehicleForm(){
         tank: '',
         fuel_liters: '',
         kilometers: '',
-        category: 'barco',
+        category: '',
         is_for_pcd : false,
         have_gps: false,
         status: 'eita',
@@ -94,9 +94,13 @@ function VehicleForm(){
                             <label className="form-control-label" class="text-left pt-3">Km rodados:</label>
                             <Form.Control type="number" name ="kilometers" size="lg" placeholder="kilometers" autoComplete="kilometers-car" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
-                        <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Categoria:</label>
-                            <Form.Control type="text" name ="category" size="lg" placeholder="categoria" autoComplete="category" className="position-relative" onChange={handleInputChange}/>
+                        <Form.Group controlId="car_type">
+                            <label className="form-control-label" class="text-left pt-3">Selecione a categoria do carro:</label>
+                            <Form.Control as="select" name="category" size="lg" placeholder="categoria" style={{ width: '400px' }} onChange={handleInputChange}>
+                                {
+                                Car.CarType.map((result) => (<option text={result.Id}>{result.Cname}</option>))
+                                }
+                            </Form.Control>
                         </Form.Group>
                         <Form>
                             <div>

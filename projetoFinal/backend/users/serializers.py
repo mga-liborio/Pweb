@@ -1,6 +1,5 @@
+from django.db.models import fields
 from rest_framework import serializers
-
-from core.serializers import WriteCategorySerializer
 from .models import Address, User
 
 
@@ -14,26 +13,26 @@ class ReadAddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
         fields = ("id", "street", "number", "zip_code",
-                  "state", "city", "country",)
+                  "state", "city", "neighborhood", "country",)
         read_only_fields = fields
 
 
-class ReadUserSerializer(serializers.ModelSerializer):
+class ReadCustomerSerializer(serializers.ModelSerializer):
     address = ReadAddressSerializer()
 
     class Meta:
         model = User
-        fields = ("id", "name", "email", "cpf", "rg", "cnh", "category_cnh",
-                  "cnh_first_date", "address", "is_approved", "profession")
+        fields = ("id", "name", "email", "password", "cpf", "rg", "cnh", "category_cnh",
+                  "cnh_first_date", "address", "profession")
         read_only_fields = fields
 
 
-class WriteUserSerializer(serializers.ModelSerializer):
+class WriteCustomerSerializer(serializers.ModelSerializer):
     address = WriteAddressSerializer()
 
     class Meta:
         model = User
-        fields = ("name", "email", "cpf", "rg", "cnh", "category_cnh",
+        fields = ("name", "email", "password", "cpf", "rg", "cnh", "category_cnh",
                   "cnh_first_date", "address", "profession")
 
     def create(self, user_data):
@@ -42,3 +41,16 @@ class WriteUserSerializer(serializers.ModelSerializer):
         user = User.objects.create(address=addressObj, **user_data)
         user.save()
         return user
+
+
+class ReadEmployeeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("id", "name", "email", "registration", "salary")
+        read_only_fields = fields
+
+
+class WriteEmployeeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("name", "email", "registration", "salary", "is_staff")

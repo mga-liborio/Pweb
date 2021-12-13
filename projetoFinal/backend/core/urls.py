@@ -1,16 +1,16 @@
-from .views import CategoryModelViewSet, ReservationModelViewSet, VehicleModelViewSet
+from .views import CategoryModelViewSet, RentModelViewSet, VehicleModelViewSet
 from rest_framework import routers
 from django.urls import path, include
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 
 
-router.register(r'categories', CategoryModelViewSet,
+router.register('categories', CategoryModelViewSet,
                 basename="category")
-router.register(r'reservations', ReservationModelViewSet,
-                basename="reservation")
-router.register(r'vehicles', VehicleModelViewSet, basename="vehicle")
+router.register('rents', RentModelViewSet,
+                basename="rents")
+router.register('vehicles', VehicleModelViewSet, basename="vehicle")
 
 urlpatterns = [
-    path('', include(router.urls))
+    path(r'', include(router.urls))
 ]

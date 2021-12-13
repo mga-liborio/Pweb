@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import ugettext_lazy as _
-from django.utils import timezone
 
 
 class Address(models.Model):
@@ -11,23 +10,27 @@ class Address(models.Model):
     zip_code = models.TextField(max_length=8)
     state = models.TextField(max_length=15)
     country = models.TextField(max_length=50)
+    neighborhood = models.TextField()
 
 
 class User(AbstractUser):
     name = models.TextField(max_length=100)
     email = models.EmailField(_('email address'), unique=True)
-    cpf = models.TextField(max_length=11)
-    rg = models.TextField(max_length=11)
-    cnh = models.TextField(max_length=15)
-    category_cnh = models.TextField(max_length=2)
-    cnh_first_date = models.DateField(auto_now=True)
+    cpf = models.CharField(max_length=11, null=True)
+    username = models.TextField(null=True, blank=True)
+    registration = models.CharField(max_length=8, null=True)
+    salary = models.DecimalField(max_digits=6, decimal_places=2, null=True)
+
+    rg = models.TextField(max_length=11, null=True)
+    cnh = models.TextField(max_length=15, null=True)
+    category_cnh = models.TextField(max_length=2, null=True)
+    cnh_first_date = models.DateField(auto_now=True, null=True)
     address = models.ForeignKey(
         Address, on_delete=models.CASCADE, blank=True, null=True, related_name="addresses")
-    is_approved = models.BooleanField(default=False)
-    profession = models.TextField()
-
+    is_staff = models.BooleanField(default=False)
+    profession = models.TextField(blank=True, null=True)
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'name', 'cpf', 'cnh']
+    REQUIRED_FIELDS = ['name', ]
 
     def __str__(self):
         return "{}".format(self.email)
