@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
-import { Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap"
+import Api from '../ApiAxions'
+
 
 
 function ChecklistForm() {
@@ -37,6 +39,9 @@ function ChecklistForm() {
   function handleFormSubmit(event) {
     event.preventDefault();
     console.log(campos);
+    Api.post("/checklists/", campos).then((res)=>{
+      console.log(res.data);
+    }).catch((error)=>{console.log(error)});
   }
 
   return (

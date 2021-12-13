@@ -32,7 +32,7 @@ function ProviderRegistrationForm() {
     <Container id="provider-main-container" className="d-grid h-100">
       <h1>Provider Registration</h1>
       <p>Provider information</p>
-      <Form id="provider-registration-form" onSubmit={handleFormSubmit}>
+      <Form id="provider-registration-form" initialState={{ input: '' }} onSubmit={handleFormSubmit}>
 
         <Form.Group className="mb-3" controlId="name_field">
           <Form.Label>Name</Form.Label>
@@ -95,7 +95,7 @@ function ProviderRegistrationForm() {
         </Form.Group>
 
         <button type="submit" class="submit button" onChange={handleInputChange}>Send</button>
-        <button type="inputClear" class="submit button" onChange={handleInputChange}>Clear</button>
+        <button type="reset" class="submit button" onChange={handleInputChange}>Clear</button>
       </Form >
     </Container >
   )
