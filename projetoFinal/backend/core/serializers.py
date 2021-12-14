@@ -1,5 +1,7 @@
+from django.db.models import query
 from rest_framework import serializers
 from core.models import Category, Rent, Vehicle
+from users.models import User
 
 
 class ReadCategorySerializer(serializers.ModelSerializer):
@@ -38,10 +40,12 @@ class WriteVehicleSerializer(serializers.ModelSerializer):
 class WriteRentSerializer(serializers.ModelSerializer):
     vehicle = serializers.SlugRelatedField(
         slug_field="license_plate", queryset=Vehicle.objects.all())
+    customer = serializers.SlugRelatedField(
+        slug_field="email", queryset=User.objects.all())
 
     class Meta:
         model = Rent
-        fields = ("vehicle", "rent_date", "return_date",
+        fields = ("vehicle", "start_date", "end_date", "return_date",
                   "is_approved", "total_price", "is_returned")
 
 
@@ -51,6 +55,6 @@ class ReadRentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Rent
-        fields = ("id", "vehicle", "rent_date", "return_date",
+        fields = ("id", "vehicle", "start_date", "return_date",
                   "is_approved", "total_price", "is_returned")
         read_only_fields = fields
