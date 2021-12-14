@@ -57,7 +57,7 @@ function ClientForm(){
 
     return(
         <Container id="main-container" className="d-grid h-100">
-            <form onSubmit={handleFormSubmit} id="info-car" className="text w-100">
+            <form onSubmit={handleFormSubmit} id="info-car" initialState={{ input: '' }} className="text w-100">
                     <div className="col-md-8 m-auto">
                         <p className="lead text-center pt-5">Cadastro Veículos</p>
                         <Form.Group>
@@ -145,6 +145,7 @@ function ClientForm(){
                         </Form.Group>
                         <div className="row">
                             <input type="submit" name="aaa" className="btn btn-info btn-block mt-4"/>
+                            <button type="reset" class="submit button" onChange={handleInputChange}>Clear</button>
                         </div>
                     </div>
             </form>
