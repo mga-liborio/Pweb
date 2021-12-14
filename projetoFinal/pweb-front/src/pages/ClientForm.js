@@ -23,7 +23,7 @@ function ClientForm(){
         profession: '',
         is_approved: ''
     });
-
+    
     
     
     function handleInputChange(event){
