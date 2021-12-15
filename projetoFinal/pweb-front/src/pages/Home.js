@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import '../css/styles.css'
 
 class Home extends React.Component {
 
@@ -317,7 +318,7 @@ class Home extends React.Component {
                                         <div class="row">
                                             <div class="col-4">
                                                 <h3 class="primary-color">18</h3>
-                                                <p class="secondary-color">anos na construção civil</p>
+                                                <p class="secondary-color">anos locando carros</p>
                                             </div>
                                             <div class="col-4">
                                                 <h3 class="primary-color">95</h3>
