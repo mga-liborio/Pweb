@@ -8,7 +8,7 @@
 }
 
 .bg-secondary-color{
-    background-color: #050505;
+    background-color: #ece8ea;
     
 }
 
@@ -21,6 +21,10 @@
 }
 .secondary-color{
     color: #ece8ea;
+}
+
+.secondary-color2{
+    color: #050505;
 }
 
 /*NAVBAR*/

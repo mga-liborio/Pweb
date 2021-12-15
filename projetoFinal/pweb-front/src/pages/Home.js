@@ -287,9 +287,9 @@ class Home extends React.Component {
                             </div>
                             <div class="col-12 col-md-7 bg-secondary-color" id="info-content">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <h2 class="title primary-color">Estes dados fazem a diferença</h2>
-                                        <p class="subtitle secondary-color">
+                                    <div class="col-10">
+                                        <h2 class="title secondary-color2">Estes dados fazem a diferença</h2>
+                                        <p class="subtitle secondary-color2">
                                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                             Alias rerum consequatur laborum recusandae velit quod minima
                                             vitae suscipit quo. Illum asperiores aliquam porro cupiditate
@@ -299,16 +299,16 @@ class Home extends React.Component {
                                     <div class="col-12" id="info-number">
                                         <div class="row">
                                             <div class="col-4">
-                                                <h3 class="primary-color">18</h3>
-                                                <p class="secondary-color">Anos conduzindo sonhos</p>
+                                                <h3 class="secondary-color2">18</h3>
+                                                <p class="secondary-color2">Anos conduzindo sonhos</p>
                                             </div>
                                             <div class="col-4">
-                                                <h3 class="primary-color">12</h3>
-                                                <p class="secondary-color">Prêmios Top-of-Mind</p>
+                                                <h3 class="secondary-color2">12</h3>
+                                                <p class="secondary-color2">Prêmios Top-of-Mind</p>
                                             </div>
                                             <div class="col-4">
-                                                <h3 class="primary-color">+10.000</h3>
-                                                <p class="secondary-color">Clientes satisfeitos</p>
+                                                <h3 class="secondary-color2">+10.000</h3>
+                                                <p class="secondary-color2">Clientes satisfeitos</p>
                                             </div>
                                         </div>
                                     </div>
