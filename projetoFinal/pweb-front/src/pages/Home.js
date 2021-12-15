@@ -28,7 +28,7 @@ class Home extends React.Component {
                         <div class="collapse navbar-collapse" id="navbar-items">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <Link to="/client-create" class="nav-link active">CILENTE</Link>
+                                    <Link to="/client-create" class="nav-link active">CLIENTE</Link>
                                 </li>
                                 <li class="nav-item">
                                      <Link to="/reservation" class="nav-link active">RESERVAS</Link>

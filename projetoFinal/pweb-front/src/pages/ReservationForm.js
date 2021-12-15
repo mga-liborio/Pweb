@@ -26,12 +26,12 @@ function ReservationForm() {
   }
 
   function handleFormSubmit(event) {
-		event.preventDefault();
-		console.log(campos);
-		Api.post("/rents/", campos).then((res) => {
-			console.log(res.data);
-		}).catch((error) => { console.log(error) });
-	}
+    event.preventDefault();
+    console.log(campos);
+    Api.post("/rents/", campos).then((res) => {
+      console.log(res.data);
+    }).catch((error) => { console.log(error) });
+  }
 
   return (
     <Container id="main-container" className="d-grid h-100">
@@ -77,23 +77,29 @@ function ReservationForm() {
           <Form.Label>Return date</Form.Label>
           <Form.Control type="date" name="return_date" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange} />
         </Form.Group>
-        
+
         <Form.Label>Is approved</Form.Label>
-        <Form.Select className="mb-3" controlId="is_approved">
-          <option>Open this select menu</option>
-          <option type="text" name="is_approved" value="y" size="lg" onChange={handleInputChange}>Yes</option>
-          <option type="text" name="is_approved" value="n" size="lg" onChange={handleInputChange}>No</option>
-        </Form.Select>
+        <Form.Control as="select" name="is_approved" size="lg" placeholder="" onChange={handleInputChange}>
+          <option value={undefined}>Select</option>
+          <option value={true}>Yes</option>
+          <option value={false}>No</option>
+        </Form.Control>
         <Form.Group className="mb-3" controlId="total_price">
           <Form.Label>Total price</Form.Label>
           <Form.Control type="text" name="total_price" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange} />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="is_returned">
-          <Form.Label>Is returned</Form.Label>
-          <Form.Control type="text" name="is_returned" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange} />
-        </Form.Group>
-        <button type="submit" class="submit button" onChange={handleInputChange}>Send</button>
-        <button type="submit" class="submit button" onChange={handleInputChange}>Clear</button>
+
+        <Form.Label>Is returned</Form.Label>
+        <Form.Control as="select" name="is_returned" size="lg" placeholder="" onChange={handleInputChange}>
+          <option value={undefined}>Select</option>
+          <option value={true}>Yes</option>
+          <option value={false}>No</option>
+        </Form.Control>
+
+					<div className="row">
+						<input type="submit" name="submit button" className="btn btn-info btn-block mt-4" />
+						<button type="reset" class="submit button" className="btn btn-info btn-block" onChange={handleInputChange}>Clear</button>
+					</div>
       </Form>
     </Container>
   )

@@ -18,9 +18,9 @@ function CarList() {
     console.log(campos);
   }
 
-  useEffect( () => {
+  useEffect(() => {
     (async () => {
-      Api.get('/categories/').then( response => {
+      Api.get('/categories/').then(response => {
         setCampos(response.data);
         console.log(campos);
       });
@@ -41,9 +41,11 @@ function CarList() {
           </Form.Control>
         </Form.Group>
 
-        <button type="submit" class="submit button" onChange={handleInputChange}>Send</button>
-        <button type="reset" class="submit button" onChange={handleInputChange}>Clear</button>
-        
+
+          <input type="submit" name="submit button" style={{ width: '200px' }} className="btn btn-info btn-block mt-4" />
+          <button type="reset" class="submit button" style={{ width: '200px' }} className="btn btn-info btn-block mt-4" onChange={handleInputChange}>Clear</button>
+
+
       </Form >
     </Container >
   )

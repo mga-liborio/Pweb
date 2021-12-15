@@ -157,7 +157,7 @@ function ChecklistForm() {
 				<Form.Group className="mb-3" controlId="observations">
 					<div class="form-group">
 						<label for="exampleFormControlTextarea1">Observations</label>
-						<textarea class="form-control" as="textarea" id="exampleFormControlTextarea1" style={{ height: '100px', width: '970px' }} name='observations' maxLength={500} rows="3" onChange={handleInputChange}></textarea>
+						<textarea class="form-control" as="textarea" id="exampleFormControlTextarea1" style={{ height: '100px', width: '1060px' }} name='observations' maxLength={500} rows="3" onChange={handleInputChange}></textarea>
 					</div>
 				</Form.Group >
 				<Row>
@@ -262,8 +262,10 @@ function ChecklistForm() {
 				<Form.Group className="mb-3" controlId="singed_employee">
 					<Form.Label>Please check all fields before confirming</Form.Label>
 				</Form.Group >
-				<button type="submit" class="submit button" onChange={handleInputChange}>Send</button>
-				<button type="reset" class="submit button" onChange={handleInputChange}>Clear</button>
+                        <div className="row">
+                            <input type="submit" name="submit button" className="btn btn-info btn-block mt-4"/>
+                            <button type="reset" class="submit button" className="btn btn-info btn-block mt-4" onChange={handleInputChange}>Clear</button>
+                        </div>
 			</Form >
 		</Container >
 	)
