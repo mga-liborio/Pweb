@@ -5,7 +5,6 @@ import { Col, Row } from "react-bootstrap"
 import Api from '../ApiAxions'
 
 
-
 function ChecklistForm() {
 
 	const [campos, setCampos] = useState({

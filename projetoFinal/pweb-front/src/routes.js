@@ -1,7 +1,6 @@
 import React from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
-import TaskList from "./pages/TaskList"
 import VehicleForm from "./pages/VehicleForm"
 import Login from "./pages/Login"
 import ChecklistForm from "./pages/ChecklistForm"
@@ -18,7 +17,6 @@ export default function Routers(){
         <BrowserRouter>
             <Routes>
                 <Route exact path="/" element={<Home/>} />
-                <Route exact path="/task-list" element={<TaskList/>} />
                 <Route exact path="/vehicle-create" element={<VehicleForm/>} />
                 <Route exact path="/login" element={<Login/>} />
                 <Route exact path="/client-create" element={<ClientForm/>} />
@@ -26,8 +24,7 @@ export default function Routers(){
                 <Route exact path="/employee-register" element={<EmployeeRegistrationForm/>} />                
                 <Route exact path="/provider-register" element={<ProviderRegistrationForm/>} />                
                 <Route exact path="/reservation" element={<ReservationForm/>} />
-                <Route exact path="/carlist" element={<CarList/>} />                
-                
+                <Route exact path="/carlist" element={<CarList/>} />
             </Routes>
             
         </BrowserRouter>

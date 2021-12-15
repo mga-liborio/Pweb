@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
 import Api from '../ApiAxions'
+import { Link } from 'react-router-dom';
 
-import './Login.css'
+import '../css/Login.css'
 
 function Login(){
 
@@ -17,14 +17,15 @@ function Login(){
         campos[event.target.name] = event.target.value;
         setCampos(campos);
     }
-    
-    
-    function handleFormSubmit(event){
-        event.preventDefault();
-        console.log(campos);
-    }
-    
 
+    function handleFormSubmit(event) {
+		event.preventDefault();
+		console.log(campos);
+		Api.post("/auth/login/", campos).then((res) => {
+			console.log(res.data);
+		}).catch((error) => { console.log(error) });
+	}
+    
     return(
         <Container id="main-container" className="d-grid h-100">
             <Form id="sign-in-form"className="text-center w-100" onSubmit={handleFormSubmit}> 
@@ -38,12 +39,14 @@ function Login(){
                 </Form.Group >
                 <Form.Group controlId="sign-in-password" className="mb-3">
                     <Form.Control type="password" name="senha" size="lg" placeholder="senha" autoComplete="current-password" className="position-relative" onChange={handleInputChange} />
-                </Form.Group>
-                <Form.Group controlId="remember-me" className="d-flex justify-content-center mb-4">
-                    <Form.Check label="Me lembre na próxima"/>
-                </Form.Group>
+                </Form.Group>       
                 <div className="d-grid">
                     <button variante="primary" size="lg" type="submit">Logar</button>
+                </div>
+                <div className="d-grid">
+                    <Link to="/client-create/">
+                        <button variante="primary" size="lg" type="register">Registrar</button>
+                    </Link>    
                 </div>
                 <p className="mt-5 text-muted">&copy; 2021-2022 </p>
             </Form>
@@ -52,4 +55,4 @@ function Login(){
     );
 }
 
-export default Login;
+export default Login;       

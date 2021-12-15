@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
-import Car from "./Car"
 import Api from '../ApiAxions'
 
 

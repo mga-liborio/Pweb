@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
 import Api from '../ApiAxions'
 
 function ClientForm(){
@@ -14,23 +13,36 @@ function ClientForm(){
         cnh: '',
         category_cnh: '',
         cnh_first_date: '',
+        profession: '',
+        address: {}
+    });
+
+
+    const [endereco, setEndereco] = useState({
         street: '',
         number: '',
         city: '',
         zip_code: '',
         state : '',
         country: '',
-        profession: '',
-        is_approved: ''
     });
-    
+
+    function handleInputAddressChange(event){
+
+        const target = event.target
+        const name = target.name
+        const value = target.value
+
+        endereco[name] = value;
+        setEndereco(endereco);
+    }
     
     
     function handleInputChange(event){
 
         const target = event.target
         const name = target.name
-        const value = target.type=="checkbox" ? target.checked : target.value
+        const value = target.value
 
         campos[name] = value;
         setCampos(campos);
@@ -38,17 +50,12 @@ function ClientForm(){
 	
     function handleFormSubmit(event){
 
-        const config = {
-            Authorization: {
-              usaname: 'mga',
-              password: '1234',
-            },
-          };
+        campos['address'] =endereco;
+        setEndereco(endereco);
 
         event.preventDefault();
         console.log(campos);
-        console.log(config);
-        Api.post("/vehicles/",campos, config).then((res) => {
+        Api.post("/customers/",campos).then((res) => {
                                                         console.log(res.data)
                                                         }).catch((error) => {
                                                             console.log(error)
@@ -57,9 +64,9 @@ function ClientForm(){
 
     return(
         <Container id="main-container" className="d-grid h-100">
-            <form onSubmit={handleFormSubmit} id="info-car" initialState={{ input: '' }} className="text w-100">
+            <form onSubmit={handleFormSubmit} id="info-client" initialState={{ input: '' }} className="text w-100">
                     <div className="col-md-8 m-auto">
-                        <p className="lead text-center pt-5">Cadastro Veículos</p>
+                        <p className="lead text-center pt-5">Cadastro Cliente</p>
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">Nome completo:</label>
                             <Form.Control type="text" name ="name" size="lg" placeholder="Nome" autoComplete="name" className="position-relative" onChange={handleInputChange}/>
@@ -69,83 +76,56 @@ function ClientForm(){
                             <Form.Control type="email" name ="email" size="lg" placeholder="email" autoComplete="email" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Nome Veículo:</label>
-                            <Form.Control type="color-car" name ="color" size="lg" placeholder="cor do carro" autoComplete="color-car" className="position-relative" onChange={handleInputChange}/>
+                            <label className="form-control-label" class="text-left pt-3">cpf:</label>
+                            <Form.Control type="color-car" name ="cpf" size="lg" placeholder="cpf" autoComplete="cpf" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Nome Veículo:</label>
-                            <Form.Control type="brand-car" name ="brand" size="lg" placeholder="marca do carro" autoComplete="brand-car" className="position-relative" onChange={handleInputChange}/>
+                            <label className="form-control-label" class="text-left pt-3">rg:</label>
+                            <Form.Control type="color-car" name ="rg" size="lg" placeholder="rg" autoComplete="rg" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Ano:</label>
-                            <Form.Control type="year" name ="year" size="lg" placeholder="Ano carro" autoComplete="year-car" className="position-relative" onChange={handleInputChange}/>
+                            <label className="form-control-label" class="text-left pt-3">cnh:</label>
+                            <Form.Control type="text" name ="cnh" size="lg" placeholder="CNH" autoComplete="cnh" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Chassis:</label>
-                            <Form.Control type="chassis" name ="chassis" size="lg" placeholder="chassis" autoComplete="chassis-car" className="position-relative" onChange={handleInputChange}/>
+                            <label className="form-control-label" class="text-left pt-3">category_cnh:</label>
+                            <Form.Control type="text" name ="category_cnh" size="lg" placeholder="category_cnh" autoComplete="category_cnh" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Renavam:</label>
-                            <Form.Control type="number" name ="renavam" size="lg" placeholder="Renavam" autoComplete="renavam-car" className="position-relative" onChange={handleInputChange}/>
+                            <label className="form-control-label" class="text-left pt-3">Data CNH:</label>
+                            <Form.Control type="date" name ="cnh_first_date" size="lg" placeholder="data" autoComplete="cnh_first_date" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Tamanho do tanque combustivel em litros:</label>
-                            <Form.Control type="number" name ="tank" size="lg" placeholder="tamanho total tanque" autoComplete="tank-car" className="position-relative" onChange={handleInputChange}/>
+                            <label className="form-control-label" class="text-left pt-3">Rua:</label>
+                            <Form.Control type="text" name ="street" size="lg" placeholder="Rua" autoComplete="street" className="position-relative" onChange={handleInputAddressChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">nivel combustivel em litros:</label>
-                            <Form.Control type="number" name ="level_fuel" size="lg" placeholder="Nivel total tanque" autoComplete="level-fuel" className="position-relative" onChange={handleInputChange}/>
+                            <label className="form-control-label" class="text-left pt-3">Numero Residencia:</label>
+                            <Form.Control type="number" name ="number" size="lg" placeholder="Numero" autoComplete="number" className="position-relative" onChange={handleInputAddressChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Km rodados:</label>
-                            <Form.Control type="number" name ="km" size="lg" placeholder="km" autoComplete="km-car" className="position-relative" onChange={handleInputChange}/>
+                            <label className="form-control-label" class="text-left pt-3">Cidade:</label>
+                            <Form.Control type="text" name ="city" size="lg" placeholder="Cidade" autoComplete="city" className="position-relative" onChange={handleInputAddressChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Categoria:</label>
-                            <Form.Control type="text" name ="category" size="lg" placeholder="categoria" autoComplete="category" className="position-relative" onChange={handleInputChange}/>
-                        </Form.Group>
-                        <Form>
-                            <div>
-                                <label className="form-control-label" class="text-left pt-3">PCD : </label>
-                                <input type="checkbox" name="is_for_pcd" defaultChecked={campos.is_for_pcd} onChange={handleInputChange}/>
-                            </div>
-                        </Form>
-                        <Form>
-                            <div>
-                                <label className="form-control-label" class="text-left pt-3">GPS : </label>
-                                <input type="checkbox" name="have_gps" defaultChecked={campos.have_gps} onChange={handleInputChange}/>
-                            </div>
-                        </Form>
-                        <Form.Group>
-                            <label className="form-control-label pt-3" class="text-left">Status Carro:</label>
-                            <br/>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="available"/>
-                                <label class="form-check-label" for="inlineRadio1">Disponível</label>
-                            </div>
-                            <div class="form-check form-check-inline">                                                                                                                                                                                  
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="rented"/>
-                                <label class="form-check-label" for="inlineRadio2">Alugado</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="maintenance"/>
-                                <label class="form-check-label" for="inlineRadio1">Manutenção</label>
-                            </div>
+                            <label className="form-control-label" class="text-left pt-3">CEP:</label>
+                            <Form.Control type="number" name ="zip_code" size="lg" placeholder="CEP" autoComplete="CEP" className="position-relative" onChange={handleInputAddressChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <label className="form-control-label" class="text-left pt-3">Valor Basico por diaria:</label>
-                            <Form.Control type="number" name="price" size="lg" placeholder="km" autoComplete="price-car" className="position-relative" onChange={handleInputChange}/>
+                            <label className="form-control-label" class="text-left pt-3">Estado:</label>
+                            <Form.Control type="text" name ="state" size="lg" placeholder="Estado" autoComplete="state" className="position-relative" onChange={handleInputAddressChange}/>
                         </Form.Group>
                         <Form.Group>
-                            <div class="form-group pt-3">
-                                <label for="exempleFormControlFile">Carregue a foto do veículo:</label>
-                                <br/>
-                                <input type="file" class="form-control-file pt-2" id="FormControleFile"/>
-                            </div>
+                            <label className="form-control-label" class="text-left pt-3">Pais:</label>
+                            <Form.Control type="text" name ="country" size="lg" placeholder="country" autoComplete="Pais" className="position-relative" onChange={handleInputAddressChange}/>
+                        </Form.Group>
+                        <Form.Group>
+                            <label className="form-control-label" class="text-left pt-3">Profissao:</label>
+                            <Form.Control type="text" name ="profession" size="lg" placeholder="Profissao" autoComplete="profession" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <div className="row">
-                            <input type="submit" name="aaa" className="btn btn-info btn-block mt-4"/>
-                            <button type="reset" class="submit button" onChange={handleInputChange}>Clear</button>
+                            <input type="submit" name="submit button" className="btn btn-info btn-block mt-4"/>
+                            <button type="reset" class="submit button" className="btn btn-info btn-block" onChange={handleInputChange}>Clear</button>
                         </div>
                     </div>
             </form>

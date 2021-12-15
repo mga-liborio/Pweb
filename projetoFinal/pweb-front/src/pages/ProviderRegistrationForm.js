@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
+import Api from '../ApiAxions'
 
 //Pendências: mascara do cnpj
 
@@ -26,6 +27,9 @@ function ProviderRegistrationForm() {
 	function handleFormSubmit(event) {
 		event.preventDefault();
 		console.log(campos);
+		Api.post("/admin/providers/", campos).then((res) => {
+			console.log(res.data);
+		}).catch((error) => { console.log(error) });
 	}
 
 	return (

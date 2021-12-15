@@ -3,9 +3,6 @@ import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Api from '../ApiAxions'
 
-
-//Pendências: botão limpar página
-
 function EmployeeRegistrationForm() {
 
 	const [campos, setCampos] = useState({
@@ -15,7 +12,6 @@ function EmployeeRegistrationForm() {
 		phone: '',
 		cpf: '',
 		address: '',
-		is_staff: '',
 		password: ''
 	});
 
@@ -29,11 +25,10 @@ function EmployeeRegistrationForm() {
 		console.log(campos);
 	}
 
-	//Alterar "/checklists/"
 	function handleFormSubmit(event) {
 		event.preventDefault();
 		console.log(campos);
-		Api.post("/checklists/", campos).then((res) => {
+		Api.post("/admin/employees/", campos).then((res) => {
 			console.log(res.data);
 		}).catch((error) => { console.log(error) });
 	}
@@ -83,15 +78,6 @@ function EmployeeRegistrationForm() {
 				<Form.Group className="mb-3" controlId="address_field">
 					<Form.Label>Address</Form.Label>
 					<Form.Control type="text" name="address" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-					</Form.Control>
-				</Form.Group>
-
-				<Form.Group className="mb-3" controlId="is_staff_field">
-					<Form.Label>Is staff</Form.Label>
-					<Form.Control as="select" name="is_staff" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-						<option>Open this select menu</option>
-						<option value={true}>Yes</option>
-						<option value={false}>No</option>
 					</Form.Control>
 				</Form.Group>
 
