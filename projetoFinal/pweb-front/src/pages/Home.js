@@ -347,7 +347,7 @@ class Home extends React.Component {
                                         </form>
                                     </div>
                                     <div class="col-12 col-md-4" id="contact-container">
-                                        <h4>Formas de Contato</h4>
+                                        <h4>Contato</h4>
                                         <p class="secondary-color">(71)3343-5622</p>
                                         <p class="secondary-col">contato@luxcar.com.br</p>
                                     </div>
