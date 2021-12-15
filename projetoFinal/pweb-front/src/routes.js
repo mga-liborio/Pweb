@@ -23,7 +23,7 @@ export default function Routers(){
                 <Route exact path="/login" element={<Login/>} />
                 <Route exact path="/client-create" element={<ClientForm/>} />
                 <Route exact path="/checklist" element={<ChecklistForm/>} />
-                <Route exact path="/employeeregister" element={<EmployeeRegistrationForm/>} />                
+                <Route exact path="/employee-register" element={<EmployeeRegistrationForm/>} />                
                 <Route exact path="/provider-register" element={<ProviderRegistrationForm/>} />                
                 <Route exact path="/reservation" element={<ReservationForm/>} />
                 <Route exact path="/carlist" element={<CarList/>} />                

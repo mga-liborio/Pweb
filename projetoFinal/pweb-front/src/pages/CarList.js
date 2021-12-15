@@ -43,7 +43,7 @@ function CarList() {
         </Form.Group>
 
         <button type="submit" class="submit button" onChange={handleInputChange}>Send</button>
-        <button type="submit" class="submit button" onChange={handleInputChange}>Clear</button>
+        <button type="reset" class="submit button" onChange={handleInputChange}>Clear</button>
         
       </Form >
     </Container >
