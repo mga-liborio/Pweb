@@ -1,4 +1,3 @@
-from django.db.models import query
 from rest_framework import serializers
 from core.models import Category, Rent, Vehicle
 from users.models import User
@@ -22,7 +21,7 @@ class ReadVehicleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Vehicle
-        fields = ("id", "license_plate", "color", "brand", "car_model", "year", "category", "chassi_number", "renavam", "price",
+        fields = ("id", "license_plate", "color", "brand", "car_model", "year", "category", "chassi_number", "renavam", "photo", "price",
                   "have_gps", "is_for_pcd", "kilometers", "full_tank", "fuel_liters", "status")
         read_only_fields = fields
 
@@ -33,7 +32,7 @@ class WriteVehicleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Vehicle
-        fields = ("license_plate", "color", "brand", "car_model", "year", "category", "chassi_number", "renavam", "price",
+        fields = ("license_plate", "color", "brand", "car_model", "year", "category", "chassi_number", "renavam", "price", "photo",
                   "have_gps", "is_for_pcd", "kilometers", "full_tank", "fuel_liters", "status")
 
 

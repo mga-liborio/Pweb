@@ -1,5 +1,4 @@
 from django.db import models
-
 from accessories.models import Checklist, BookingOptions, Insurance, Service
 from users.models import User
 
@@ -22,7 +21,7 @@ class Vehicle(models.Model):
     chassi_number = models.TextField(unique=True)
     price = models.DecimalField(max_digits=4, decimal_places=2)
     renavam = models.TextField(unique=True)
-    # imageCar = models.ImageField()
+    photo = models.ImageField(null=True, blank=True)
     have_gps = models.BooleanField()
     is_for_pcd = models.BooleanField()
     kilometers = models.DecimalField(max_digits=10, decimal_places=1)

@@ -17,7 +17,7 @@ class CategoryListRetrieveView(ModelViewSet):
 
 class VehicleModelViewSet(ModelViewSet):
     queryset = Vehicle.objects.all()
-    permission_classes = IsAdminUser
+    permission_classes = [IsAdminUser, ]
 
     def get_serializer_class(self):
         if self.action in ("list", "retrieve"):
@@ -27,7 +27,7 @@ class VehicleModelViewSet(ModelViewSet):
 
 class CategoryModelViewSet(ModelViewSet):
     queryset = Category.objects.all()
-    permission_classes = IsAdminUser
+    permission_classes = [IsAdminUser, ]
 
     def get_serializer_class(self):
         if self.action in ("list", "retrieve"):
@@ -44,7 +44,7 @@ class RentPermissions(BasePermission):
 
 class RentModelViewSet(ModelViewSet, RentPermissions):
     queryset = Rent.objects.all()
-    permission_classes = [RentPermissions]
+    permission_classes = [RentPermissions, ]
 
     def get_serializer_class(self):
         if self.action in ("list", "retrieve"):

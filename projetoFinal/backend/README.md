@@ -3,10 +3,6 @@ precisa rodar os seguintes comandos:
 
 pip install django<br>
 pip3 install djangorestframework<br>
-
-<!-- pip install django-rest-firebase-auth<br> -->
-
-pip install djangorestframework-firebase<br>
 pip install Pillow<br>
 pip install djangorestframework-jwt
 
