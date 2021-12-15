@@ -28,13 +28,10 @@ class Home extends React.Component {
                         <div class="collapse navbar-collapse" id="navbar-items">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active" aria-current="page">QUEM SOMOS</a>
+                                    <Link to="/client-create" class="nav-link active">CILENTE</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">RAZÃO SOCIAL</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">FALE CONOSCO</a>
+                                     <Link to="/reservation" class="nav-link active">RESERVAS</Link>
                                 </li>
                                 <li class="nav-item">
                                     <Link to="/login" class="nav-link active">LOGIN</Link>
@@ -84,7 +81,7 @@ class Home extends React.Component {
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/img/Imagens/Imagens-de-carros/Carro3.jpg" alt="Carro3" class="d-block w-100" />
+                                <img src="assets/img/Imagens/Imagens-de-carros/Carro3.jpeg" alt="Carro3" class="d-block w-100" />
                                 <div class="carousel-caption">
                                     <h5>Carros para quem tem o prazer de viver bem</h5>
                                     <a href="#" class="btn btn-dark">Conheça nossas facilidades</a>
@@ -127,7 +124,7 @@ class Home extends React.Component {
                             <div class="card text-center">
                                 <i class="bi bi-box primary-color"></i>
                                 <div class="card-body">
-                                    <h5 class="card-title primary-color">Você tem dinheiro 1</h5>
+                                    <h5 class="card-title primary-color">Dirija o veículo dos seus sonhos</h5>
                                     <p class="card-text secondar-color">Lorem ipsum dolor sit, amet
                                         consectetur adipisicing elit. Eaque nam enim dicta et rem vitae
                                         repellendus, facere, ipsa a laboriosam eos repudiandae atque
@@ -140,7 +137,7 @@ class Home extends React.Component {
                             <div class="card text-center">
                                 <i class="bi bi-layers primary-color"></i>
                                 <div class="card-body">
-                                    <h5 class="card-title primary-color">Projetos completos 2</h5>
+                                    <h5 class="card-title primary-color">Os melhores de cada categoria</h5>
                                     <p class="card-text secondar-color">Lorem ipsum dolor sit, amet
                                         consectetur adipisicing elit. Eaque nam enim dicta et rem vitae
                                         repellendus, facere, ipsa a laboriosam eos repudiandae atque
@@ -153,7 +150,7 @@ class Home extends React.Component {
                             <div class="card text-center">
                                 <i class="bi bi-lightning-charge primary-color"></i>
                                 <div class="card-body">
-                                    <h5 class="card-title primary-color">Os melhores do IFBA 3</h5>
+                                    <h5 class="card-title primary-color">Conheça nossas novidades</h5>
                                     <p class="card-text secondar-color">Lorem ipsum dolor sit, amet
                                         consectetur adipisicing elit. Eaque nam enim dicta et rem vitae
                                         repellendus, facere, ipsa a laboriosam eos repudiandae atque
@@ -168,9 +165,9 @@ class Home extends React.Component {
                 </div>
                 <div class="container" id="features-conainer">
                     <div class="col-12">
-                        <h2 class="title primary-color">Carros populares</h2>
+                        <h2 class="title primary-color">Nossos veículos</h2>
                         <p class="subtitle secondary-color">
-                            Conhheça nossos carros com vantajosos custo-benefícios
+                            Conheça o nosso plantel
                         </p>
                     </div>
                     <div class="col-12" id="featured-images">
@@ -178,8 +175,7 @@ class Home extends React.Component {
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro5.jpg" alt="Projeto 1" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">SUV</p>
                                 </div>
                             </div>
 
@@ -187,103 +183,89 @@ class Home extends React.Component {
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro6.jpg" alt="Projeto 2" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">SUV</p>
                                 </div>
                             </div>
 
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro7.jpg" alt="Projeto 3" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">Esportivo de Luxo</p>
                                 </div>
                             </div>
 
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro8.jpg" alt="Projeto 4" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">Hatch</p>
                                 </div>
                             </div>
 
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro9.jpg" alt="Projeto 5" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">Esportivo de Luxo</p>
                                 </div>
                             </div>
 
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro10.jpg" alt="Projeto 6" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">SUV</p>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro11.jpg" alt="Projeto 1" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">SUV</p>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro12.jpg" alt="Projeto 2" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">Esportivo</p>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro13.jpg" alt="Projeto 3" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">Esportivo Clássico</p>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro15.jpg" alt="Projeto 5" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">Esportivo de Luxo</p>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro16.jpg" alt="Projeto 6" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">SUV</p>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro17.jpg" alt="Projeto 1" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">Inovadores</p>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro18.jpg" alt="Projeto 2" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">Esportivo de Luxo</p>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro19.jpg" alt="Projeto 3" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">Esportivo de Luxo</p>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <img src="assets/img/Imagens/Imagens-de-carros/Carro20.jpg" alt="Projeto 4" class="img.fluid" />
                                 <div class="banner content">
-                                    <p class="secondary-color">Categoria</p>
-                                    <h3>Nome do projeto</h3>
+                                    <p class="secondary-color">SUV</p>
                                 </div>
                             </div>
                         </div>
@@ -291,9 +273,9 @@ class Home extends React.Component {
                 </div>
                 <div class="container" id="info-container">
                     <div class="col-12">
-                        <h2 class="title primary-color">Descrição do produto</h2>
+                        <h2 class="title primary-color">Nossa trajetória</h2>
                         <p class="subtitle secondary-color">
-                            Conhheça mais dos nossos serviços
+                            Não alugamos carros - realizamos sonhos
                         </p>
                     </div>
                     <div class="col-12">
@@ -318,15 +300,15 @@ class Home extends React.Component {
                                         <div class="row">
                                             <div class="col-4">
                                                 <h3 class="primary-color">18</h3>
-                                                <p class="secondary-color">anos locando carros</p>
+                                                <p class="secondary-color">Anos conduzindo sonhos</p>
                                             </div>
                                             <div class="col-4">
-                                                <h3 class="primary-color">95</h3>
-                                                <p class="secondary-color">Projetos executados</p>
+                                                <h3 class="primary-color">12</h3>
+                                                <p class="secondary-color">Prêmios Top-of-Mind</p>
                                             </div>
                                             <div class="col-4">
-                                                <h3 class="primary-color">639</h3>
-                                                <p class="secondary-color">Clientes</p>
+                                                <h3 class="primary-color">+10.000</h3>
+                                                <p class="secondary-color">Clientes satisfeitos</p>
                                             </div>
                                         </div>
                                     </div>
