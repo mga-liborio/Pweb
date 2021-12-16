@@ -1,7 +1,7 @@
 # Pweb
 projeto_final
 
-dependencias: 
+backend dependencias: 
 
 asgiref==3.4.1
 Django==3.2.9
