@@ -1,6 +1,8 @@
 # Pweb
 projeto_final
 
+dependencias: 
+
 asgiref==3.4.1
 Django==3.2.9
 django-cors-headers==3.10.1
