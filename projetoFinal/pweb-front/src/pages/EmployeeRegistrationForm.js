@@ -80,7 +80,7 @@ function EmployeeRegistrationForm() {
 						<Form.Label>Cellphone</Form.Label>
 						<Form.Control type="number" name="cellphone" placeholder="Cellphone" autoComplete="cellphone" className="position-relative" onInput={(e) => {
 							e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 11)
-						}} size="lg" placeholder="" onChange={handleInputChange}>
+						}} size="lg" onChange={handleInputChange}>
 						</Form.Control>
 					</Form.Group>
 
@@ -88,7 +88,7 @@ function EmployeeRegistrationForm() {
 						<Form.Label>Phone</Form.Label>
 						<Form.Control type="number" name="phone" placeholder="phone" autoComplete="phone" className="position-relative" onInput={(e) => {
 							e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 11)
-						}} size="lg" placeholder="" onChange={handleInputChange}>
+						}} size="lg" onChange={handleInputChange}>
 						</Form.Control>
 					</Form.Group>
 
@@ -96,7 +96,7 @@ function EmployeeRegistrationForm() {
 						<Form.Label>CPF</Form.Label>
 						<Form.Control type="number" name="cpf" placeholder="Cpf" autoComplete="cpf" className="position-relative" onInput={(e) => {
 							e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 11)
-						}} className="textbox" size="lg" placeholder="" onChange={handleInputChange}>
+						}} size="lg" onChange={handleInputChange}>
 						</Form.Control>
 					</Form.Group>
 
@@ -131,7 +131,7 @@ function EmployeeRegistrationForm() {
 
 					<Form.Group className="mb-3" controlId="password_field">
 						<Form.Label>Password</Form.Label>
-						<Form.Control type="password" name="password" placeholder="Password" autoComplete="password" className="position-relative" size="lg" placeholder="" onChange={handleInputChange}>
+						<Form.Control type="password" name="password" placeholder="Password" autoComplete="password" className="position-relative" size="lg" onChange={handleInputChange}>
 						</Form.Control>
 					</Form.Group>
 					<div className="row">

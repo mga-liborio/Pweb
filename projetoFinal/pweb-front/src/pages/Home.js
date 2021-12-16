@@ -356,14 +356,14 @@ class Home extends React.Component {
                                             <h4>Você pode está procurando por:</h4>
                                             <div class="col-6">
                                                 <ul class="list-unstyled">
-                                                    <li><a href="" class="secondary-color">Projetos </a></li>
-                                                    <li><a href="" class="secondary-color">Imóveis </a></li>
-                                                    <li><a href="" class="secondary-color">Vendas </a></li>
+                                                    <li><a href="" class="secondary-color">Novidades</a></li>
+                                                    <li><a href="" class="secondary-color">Clássicos</a></li>
+                                                    <li><a href="" class="secondary-color">Vendas</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-6">
                                                 <ul class="list-unstyled">
-                                                    <li><a href="" class="secondary-color">Oportunidade</a></li>
+                                                    <li><a href="" class="secondary-color">Oportunidades</a></li>
                                                     <li><a href="" class="secondary-color">Tendências</a></li>
                                                     <li><a href="" class="secondary-color">Curiosidades</a></li>
                                                 </ul>

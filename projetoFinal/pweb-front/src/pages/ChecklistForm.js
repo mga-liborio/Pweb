@@ -52,21 +52,19 @@ function ChecklistForm() {
 					<Col>
 						<Form.Group className="mb-3" controlId="paint_scratch">
 							<Form.Label>Paint scratch</Form.Label>
-							<Form.Control as="select" name="paint_scratch" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="paint_scratch" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="paint_scratch" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group>
 					</Col>
 					<Col>
 						<Form.Group className="mb-3" controlId="tires_good">
 							<Form.Label>Tires good</Form.Label>
-							<Form.Control as="select" name="tires_good" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="tires_good" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="tires_good" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group>
 					</Col>
 				</Row>
@@ -79,11 +77,10 @@ function ChecklistForm() {
 					<Col>
 						<Form.Group className="mb-3" controlId="lights_working">
 							<Form.Label>Lights working</Form.Label>
-							<Form.Control as="select" name="lights_working" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="lights_working" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="lights_working" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group>
 					</Col>
 				</Row>
@@ -91,22 +88,19 @@ function ChecklistForm() {
 					<Col>
 						<Form.Group className="mb-3" controlId="panel_lights">
 							<Form.Label>Panel lights</Form.Label>
-							<Form.Control as="select" name="panel_lights" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="panel_lights" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="panel_lights" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group>
 					</Col>
 					<Col>
-
 						<Form.Group className="mb-3" controlId="brake_lights">
 							<Form.Label>Brake lights</Form.Label>
-							<Form.Control as="select" name="brake_lights" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="brake_lights" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="brake_lights" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group>
 					</Col>
 				</Row>
@@ -114,21 +108,19 @@ function ChecklistForm() {
 					<Col>
 						<Form.Group className="mb-3" controlId="seats">
 							<Form.Label>Seats</Form.Label>
-							<Form.Control as="select" name="seats" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="seats" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="seats" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group>
 					</Col>
 					<Col>
 						<Form.Group className="mb-3" controlId="roof">
 							<Form.Label>Roof</Form.Label>
-							<Form.Control as="select" name="roof" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="roof" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="roof" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group >
 					</Col>
 				</Row>
@@ -136,49 +128,45 @@ function ChecklistForm() {
 					<Col>
 						<Form.Group className="mb-3" controlId="is_clean">
 							<Form.Label>Is clean</Form.Label>
-							<Form.Control as="select" name="is_clean" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="is_clean" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="is_clean" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group >
 					</Col>
 					<Col>
 						<Form.Group className="mb-3" controlId="glasses">
 							<Form.Label>Glasses</Form.Label>
-							<Form.Control as="select" name="glasses" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="glasses" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="glasses" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group >
 					</Col>
 				</Row>
 				<Form.Group className="mb-3" controlId="observations">
 					<div class="form-group">
 						<label for="exampleFormControlTextarea1">Observations</label>
-						<textarea class="form-control" as="textarea" id="exampleFormControlTextarea1" style={{ height: '100px', width: '1060px' }} name='observations' maxLength={500} rows="3" onChange={handleInputChange}></textarea>
+						<textarea class="form-control" as="textarea" id="exampleFormControlTextarea1" style={{ height: '100px', width: '400px' }} name='observations' maxLength={500} rows="3" onChange={handleInputChange}></textarea>
 					</div>
 				</Form.Group >
 				<Row>
 					<Col>
 						<Form.Group className="mb-3" controlId="gps_working">
 							<Form.Label>GPS working</Form.Label>
-							<Form.Control as="select" name="gps_working" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="gps_working" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="gps_working" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group >
 					</Col>
 					<Col>
 						<Form.Group className="mb-3" controlId="lock_working">
 							<Form.Label>Lock working</Form.Label>
-							<Form.Control as="select" name="lock_working" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="lock_working" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="lock_working" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group >
 					</Col>
 				</Row>
@@ -192,11 +180,10 @@ function ChecklistForm() {
 					<Col>
 						<Form.Group className="mb-3" controlId="security_items">
 							<Form.Label>Security items</Form.Label>
-							<Form.Control as="select" name="security_items" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="security_items" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="security_items" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group >
 					</Col>
 				</Row>
@@ -204,68 +191,60 @@ function ChecklistForm() {
 					<Col>
 						<Form.Group className="mb-3" controlId="oil">
 							<Form.Label>Oil</Form.Label>
-							<Form.Control as="select" name="oil" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="oil" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="oil" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group >
 					</Col>
 					<Col>
 						<Form.Group className="mb-3" controlId="water">
 							<Form.Label>Water</Form.Label>
-							<Form.Control as="select" name="water" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="water" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="water" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group >
 					</Col>
 				</Row>
 				<Row>
 					<Col>
-
 						<Form.Group className="mb-3" controlId="brake_fluid">
 							<Form.Label>Brake fluid</Form.Label>
-							<Form.Control as="select" name="brake_fluid" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="brake_fluid" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="brake_fluid" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group >
 					</Col>
 					<Col>
 						<Form.Group className="mb-3" controlId="singed_customer">
 							<Form.Label>Signed customer</Form.Label>
-							<Form.Control as="select" name="singed_customer" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="singed_customer" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="singed_customer" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group >
 					</Col>
 				</Row>
-
 				<Row>
 					<Col>
 						<Form.Group className="mb-3" controlId="singed_employee">
 							<Form.Label>Signed employee</Form.Label>
-							<Form.Control as="select" name="singed_employee" size="lg" placeholder="" style={{ width: '400px' }} onChange={handleInputChange}>
-								<option value={undefined}>Select</option>
-								<option value={true}>Yes</option>
-								<option value={false}>No</option>
-							</Form.Control>
+							<div>
+								<input type="radio" value={true} name="singed_employee" onChange={handleInputChange} /> Yes
+								<input type="radio" value={false} name="singed_employee" onChange={handleInputChange} /> No
+							</div>
 						</Form.Group >
 					</Col>
 				</Row>
-
 				<Form.Group className="mb-3" controlId="singed_employee">
 					<Form.Label>Please check all fields before confirming</Form.Label>
 				</Form.Group >
-                        <div className="row">
-                            <input type="submit" name="submit button" className="btn btn-info btn-block mt-4"/>
-                            <button type="reset" class="submit button" className="btn btn-info btn-block mt-4" onChange={handleInputChange}>Clear</button>
-                        </div>
+				<div className="row">
+					<input type="submit" name="submit button" style={{ width: '400px' }} className="btn btn-info btn-block mt-4" />
+					<button type="reset" class="submit button" style={{ width: '400px' }} className="btn btn-info btn-block mt-4" onChange={handleInputChange}>Clear</button>
+				</div>
 			</Form >
 		</Container >
 	)
