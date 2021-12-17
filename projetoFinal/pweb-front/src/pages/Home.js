@@ -11,7 +11,7 @@ class Home extends React.Component {
                 <nav class="navbar navbar-expand-lg fixed-top bg-primary-color" id="navbar">
                     <div class="container py-3">
                         <a href="#" class="navbar-brand">
-                            <img src="assets/img/Imagens/imovi-icon.png" alt="Imovi" />
+                            <img src="assets/img/Imagens/car-icon.png" alt="Imovi" />
                             <span>LUXCAR</span>
                         </a>
                         <button
