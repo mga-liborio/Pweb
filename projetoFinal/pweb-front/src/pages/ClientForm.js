@@ -8,6 +8,7 @@ function ClientForm(){
     const [campos, setCampos] = useState({
         name: '',
         email: '',
+        password: '',
         cpf: '',
         rg: '',
         cnh: '',
@@ -24,7 +25,8 @@ function ClientForm(){
         city: '',
         zip_code: '',
         state : '',
-        country: '',
+        neighborhood: '',
+        country: ''
     });
 
     function handleInputAddressChange(event){
@@ -55,7 +57,7 @@ function ClientForm(){
 
         event.preventDefault();
         console.log(campos);
-        Api.post("/customers/",campos).then((res) => {
+        Api.post("/admin/customers/",campos).then((res) => {
                                                         console.log(res.data)
                                                         }).catch((error) => {
                                                             console.log(error)
@@ -64,7 +66,7 @@ function ClientForm(){
 
     return(
         <Container id="main-container" className="d-grid h-100">
-            <form onSubmit={handleFormSubmit} id="info-client" initialState={{ input: '' }} className="text w-100">
+            <form onSubmit={handleFormSubmit} id="info-client" initialstate={{ input: '' }} className="text w-100">
                     <div className="col-md-8 m-auto">
                         <p className="lead text-center pt-5">Cadastro Cliente</p>
                         <Form.Group>
@@ -74,6 +76,10 @@ function ClientForm(){
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">Email:</label>
                             <Form.Control type="email" name ="email" size="lg" placeholder="email" autoComplete="email" className="position-relative" onChange={handleInputChange}/>
+                        </Form.Group>
+                        <Form.Group>
+                            <label className="form-control-label" class="text-left pt-3">senha:</label>
+                            <Form.Control type="password" name ="password" size="lg" placeholder="password" autoComplete="password" className="position-relative" onChange={handleInputChange}/>
                         </Form.Group>
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">cpf:</label>
@@ -102,6 +108,10 @@ function ClientForm(){
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">Numero Residencia:</label>
                             <Form.Control type="number" name ="number" size="lg" placeholder="Numero" autoComplete="number" className="position-relative" onChange={handleInputAddressChange}/>
+                        </Form.Group>
+                        <Form.Group>
+                            <label className="form-control-label" class="text-left pt-3">neighborhood:</label>
+                            <Form.Control type="text" name ="neighborhood" size="lg" placeholder="neighborhood" autoComplete="neighborhood" className="position-relative" onChange={handleInputAddressChange}/>
                         </Form.Group>
                         <Form.Group>
                             <label className="form-control-label" class="text-left pt-3">Cidade:</label>
