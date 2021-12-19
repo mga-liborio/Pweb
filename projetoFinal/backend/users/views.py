@@ -7,7 +7,7 @@ from .serializers import ReadCustomerSerializer, WriteCustomerSerializer, ReadEm
 
 class CustomerModelViewSet(ModelViewSet):
     queryset = User.objects.all()
-    permisison_classes = IsAdminUser
+    #permisison_classes = IsAdminUser
 
     def get_serializer_class(self):
         if self.action in ("list", "retrieve"):
