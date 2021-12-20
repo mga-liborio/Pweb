@@ -6,7 +6,7 @@ from users.models import User
 class Category(models.Model):
     name = models.TextField(unique=True)
     passengers = models.IntegerField()
-    price = models.DecimalField(max_digits=4, decimal_places=2)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
         return self.name
@@ -19,7 +19,7 @@ class Vehicle(models.Model):
     car_model = models.TextField()
     year = models.IntegerField()
     chassi_number = models.TextField(unique=True)
-    price = models.DecimalField(max_digits=4, decimal_places=2)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
     renavam = models.TextField(unique=True)
     photo = models.ImageField(null=True, blank=True)
     have_gps = models.BooleanField()

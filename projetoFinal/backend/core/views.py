@@ -27,7 +27,7 @@ class VehicleModelViewSet(ModelViewSet):
 
 class CategoryModelViewSet(ModelViewSet):
     queryset = Category.objects.all()
-    permission_classes = [IsAdminUser, ]
+    #permission_classes = [IsAdminUser, ]
 
     def get_serializer_class(self):
         if self.action in ("list", "retrieve"):
