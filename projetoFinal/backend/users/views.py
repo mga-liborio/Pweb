@@ -23,7 +23,7 @@ class RegisterCustomerView(CreateAPIView):
 
 class EmployeeModelViewSet(ModelViewSet):
     queryset = User.objects.filter(is_staff=True)
-    permission_classes = IsAdminUser
+    #permission_classes = IsAdminUser
 
     def get_serializer_class(self):
         if self.action in ("list", "retrieve"):

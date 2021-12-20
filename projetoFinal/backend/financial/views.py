@@ -5,7 +5,7 @@ from financial.serializers import ( ReadExpensesSerializer, ReadIncomeSerializer
 
 class ProviderModelViewSet(ModelViewSet):
     queryset = Providers.objects.all()
-    permission_classes = [IsAdminUser, ]
+    #permission_classes = [IsAdminUser, ]
 
     def get_serializer_class(self):
         if self.action in ("list", "retrieve"):
