@@ -1,4 +1,4 @@
-from .views import BookingOptionsListRetrieveView, BookingOptionsModelViewSet, ChecklistModelViewSet, InsuranceModelViewSet, ServiceListRetrieveView, ServiceModelViewSet
+from .views import BookingOptionsListRetrieveView, BookingOptionsModelViewSet, ChecklistModelViewSet, InsuranceListRetrieveView, InsuranceModelViewSet, ServiceListRetrieveView, ServiceModelViewSet
 from rest_framework import routers
 from django.urls import path, include
 
@@ -8,8 +8,8 @@ router = routers.DefaultRouter()
 router.register('services', ServiceListRetrieveView, basename="services")
 router.register('booking-options', BookingOptionsListRetrieveView,
                 basename="booking-option")
-router.register('insurances', ServiceModelViewSet, basename="insurance")
-router.register('checklists', ServiceModelViewSet, basename="checklist")
+router.register('insurances',  InsuranceListRetrieveView, basename="insurance")
+router.register('checklists', ChecklistModelViewSet, basename="checklist")
 router.register('admin/services', ServiceModelViewSet, basename="services")
 router.register('admin/booking-options', BookingOptionsModelViewSet,
                 basename="booking-option")
