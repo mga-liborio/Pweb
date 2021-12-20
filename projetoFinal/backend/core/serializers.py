@@ -7,7 +7,7 @@ class ReadCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ("id", "name", "passengers", "price")
-    # read_only_fields = fields
+        read_only_fields = fields
 
 
 class WriteCategorySerializer(serializers.ModelSerializer):
